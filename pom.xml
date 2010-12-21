@@ -1,25 +1,39 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.friedenhagen.maven2deploytests</groupId>
-  <artifactId>maven2deploytests</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>de.friedenhagen.maven2deploytests</groupId>
+    <artifactId>maven2deploytests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>maven2deploytests</name>
-  <url>http://maven.apache.org</url>
+    <name>maven2deploytests</name>
+    <url>https://github.com/mfriedenhagen/maven2-deploy-test</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <scm>
+        <connection>git://github.com/mfriedenhagen/maven2-deploy-test.git</connection>
+        <developerConnection>git@github.com:mfriedenhagen/maven2-deploy-test.git</developerConnection>
+        <url>https://github.com/mfriedenhagen/maven2-deploy-test</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>maven2deploytests-release</id>
+            <url>file:///var/lib/hudson/userContent/m2repo/</url>
+        </repository>
+    </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
