@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import urllib
+import os
+from xml.etree import ElementTree
+import urlparse
+
+tree = ElementTree.parse("pom.xml")
+ciManagement = tree.find("{http://maven.apache.org/POM/4.0.0}ciManagement/{http://maven.apache.org/POM/4.0.0}url").text
+
+#os.system("mvn3 -Dresume=false release:prepare")
+#os.system("git commit -m'Update release.properties' release.properties")
+#os.system("git push")
+url = "http://UNKNOWN@huschteguzzel.de/hudson/job/maven2deploytests/m2release/submit"
+data = {
+    "versioningMode": "auto",
+    "appendHudsonUserName": "on",
+    "Submit": "Schedule Maven Release Build"
+   }
+print urllib.urlopen(url, urllib.urlencode(data)).read()
