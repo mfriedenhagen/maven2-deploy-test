@@ -3,7 +3,7 @@
 
     <groupId>de.friedenhagen.maven2deploytests</groupId>
     <artifactId>maven2deploytests</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>maven2deploytests</name>
