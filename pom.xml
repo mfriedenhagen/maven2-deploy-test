@@ -17,8 +17,8 @@
     </properties>
 
     <scm>
-        <connection>git://github.com/mfriedenhagen/maven2-deploy-test.git</connection>
-        <developerConnection>git@github.com:mfriedenhagen/maven2-deploy-test.git</developerConnection>
+        <connection>scm:git:git://github.com/mfriedenhagen/maven2-deploy-test.git</connection>
+        <developerConnection>scm:git:git@github.com:mfriedenhagen/maven2-deploy-test.git</developerConnection>
         <url>https://github.com/mfriedenhagen/maven2-deploy-test</url>
     </scm>
 
