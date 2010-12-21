@@ -39,6 +39,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.1</version>
+                <configuration>
+                    <connectionUrl>${project.scm.connection}</connectionUrl>
+                </configuration>
             </plugin>
         </plugins>
     </build>
