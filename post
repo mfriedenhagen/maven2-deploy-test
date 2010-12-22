@@ -1,16 +1,21 @@
 #!/usr/bin/python
-import urllib
 import os
-from xml.etree import ElementTree
+import urllib
 import urlparse
+from xml.etree import ElementTree
 
-tree = ElementTree.parse("pom.xml")
-ciManagement = tree.find("{http://maven.apache.org/POM/4.0.0}ciManagement/{http://maven.apache.org/POM/4.0.0}url").text
-
+def getSubmitUrlFromPom():
+    tree = ElementTree.parse("pom.xml")
+    ciManagement = tree.find("{http://maven.apache.org/POM/4.0.0}ciManagement/{http://maven.apache.org/POM/4.0.0}url").text
+    submitUrl = urlparse.urljoin(ciManagement, "m2release/submit")
+    r = urlparse.urlparse(submitUrl)
+    r2 = urlparse.ParseResult(r.scheme, "UNKNOWN@%s" % r.netloc, r.path, r.params, r.query, r.fragment)
+    url = urlparse.urlunparse(r2)
+    return url
 #os.system("mvn3 -Dresume=false release:prepare")
 #os.system("git commit -m'Update release.properties' release.properties")
 #os.system("git push")
-url = "http://UNKNOWN@huschteguzzel.de/hudson/job/maven2deploytests/m2release/submit"
+url = getSubmitUrlFromPom()
 data = {
     "versioningMode": "auto",
     "appendHudsonUserName": "on",
